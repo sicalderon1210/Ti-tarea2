@@ -11,9 +11,9 @@ from rest_framework.urlpatterns import format_suffix_patterns
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
 urlpatterns = [
-    path('ingrediente/', ingrediente_list),
+    path('ingrediente', ingrediente_list),
     path('ingrediente/<id>', ingrediente_detail),
-    path('hamburguesa/', hamburguesa_list),
+    path('hamburguesa', hamburguesa_list),
     path('hamburguesa/<id>', hamburguesa_detail),
     path('hamburguesa/<id_hamburguesa>/ingrediente/<id_ingrediente>', ingrediente_hamburguesa)
 ]
