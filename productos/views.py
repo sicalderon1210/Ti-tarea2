@@ -54,7 +54,7 @@ def hamburguesa_list(request, format=None):
         for burger in serializer.data:
             n = 0
             for ingrediente in burger['ingredientes']:
-                burger['ingredientes'][n] = dict(path='https://hamburgueseria.com/ingrediente/{}'.format(ingrediente))
+                burger['ingredientes'][n] = dict(path='https://t2-ti-hamburguesa.herokuapp.com/ingrediente/{}'.format(ingrediente))
                 n += 1
             data2 = {'id': burger['id']}
             data2.update(burger)
@@ -88,7 +88,7 @@ def hamburguesa_detail(request, id):
         serializer = HamburguesaSerializer(hamburguesa)
         n = 0
         for ingrediente in serializer.data['ingredientes']:
-            serializer.data['ingredientes'][n] = dict(path='https://hamburgueseria.com/ingrediente/{}'.format(ingrediente))
+            serializer.data['ingredientes'][n] = dict(path='https://t2-ti-hamburguesa.herokuapp.com/ingrediente/{}'.format(ingrediente))
             n += 1
         data = {'id': hamburguesa.id}
         data.update(serializer.data)
@@ -107,7 +107,7 @@ def hamburguesa_detail(request, id):
             serializer.save()
             n = 0
             for ingrediente in serializer.data['ingredientes']:
-                serializer.data['ingredientes'][n] = dict(path='https://hamburgueseria.com/ingrediente/{}'.format(ingrediente))
+                serializer.data['ingredientes'][n] = dict(path='https://t2-ti-hamburguesa.herokuapp.com/ingrediente/{}'.format(ingrediente))
                 n += 1
             data = {'id': hamburguesa.id}
             data.update(serializer.data)
